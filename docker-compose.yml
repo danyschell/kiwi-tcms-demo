@@ -1,0 +1,19 @@
+# docker-compose.yml
+version: "2.1"
+services:
+  kiwi:
+    image: kiwitcms/kiwi
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      - DJANGO_SETTINGS_MODULE=tcms.settings
+      - DATABASE_URL=postgres://kiwi:kiwi@postgres/kiwi
+
+  postgres:
+    image: postgres:12
+    environment:
+      - POSTGRES_DB=kiwi
+      - POSTGRES_USER=kiwi
+      - POSTGRES_PASSWORD=kiwi
