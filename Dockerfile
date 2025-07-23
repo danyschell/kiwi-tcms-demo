@@ -1,5 +1,1 @@
-FROM kiwitcms/kiwi
-
-ENV DATABASE_URL=${DATABASE_URL}
-
-EXPOSE 8080
+FROM pub.kiwitcms.eu/kiwitcms/kiwi:latest
